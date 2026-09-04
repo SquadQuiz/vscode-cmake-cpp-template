@@ -23,6 +23,17 @@ project(
     DESCRIPTION "${PROJ_NAME} - A CMake based project"
 )
 
+include(FetchContent)
+
+FetchContent_Declare(
+    spdlog
+    GIT_REPOSITORY https://github.com/gabime/spdlog.git
+    GIT_TAG v1.14.1
+    GIT_SHALLOW TRUE
+)
+
+FetchContent_MakeAvailable(spdlog)
+
 # Enable compile command to ease indexing with e.g. clangd
 set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 
@@ -48,6 +59,9 @@ add_executable(${EXECUTABLE} ${SOURCES_SRCS})
 
 # Include paths
 target_include_directories(${EXECUTABLE} PUBLIC ${INCLUDE_PATH})
+
+# Logging library
+target_link_libraries(${EXECUTABLE} PRIVATE spdlog::spdlog)
 
 # Compiler options
 target_compile_options(${EXECUTABLE} 

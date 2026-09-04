@@ -9,11 +9,13 @@
  * 
  */
 
-#include <iostream>
+#include <spdlog/spdlog.h>
+#include <spdlog/fmt/fmt.h>
 
 int main() {
 
-    std::cout << "Hello World" << std::endl;
+    const char* projectName = "mscip";
+    fmt::print("Hello from {}\n", projectName);
 
     return 0;
 }

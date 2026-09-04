@@ -9,5 +9,13 @@
         "${workspaceFolder}/include",
     ],
     "C_Cpp.default.cppStandard": "c++17",
-    "C_Cpp.formatting": "vcFormat"
+    "C_Cpp.formatting": "vcFormat",
+    "cmake.debugConfig": {
+        "args": [
+            //
+        ],
+        "console": "integratedTerminal",
+    },
+    "C_Cpp.intelliSenseEngine": "disabled",
+    "cmake.generator": "Ninja",
 }
